@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+/Multiplayer Road Crossing Game/[Ll]ibrary/
+/Multiplayer Road Crossing Game/[Tt]emp/
+/Multiplayer Road Crossing Game/[Oo]bj/
+/Multiplayer Road Crossing Game/[Bb]uild/
+/Multiplayer Road Crossing Game/[Bb]uilds/
+/Multiplayer Road Crossing Game/[Ll]ogs/
+/Multiplayer Road Crossing Game/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
