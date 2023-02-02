@@ -13,8 +13,8 @@ public class SpawnPlayer : MonoBehaviour
 
     private void Start()
     {
-        Vector3 spawnPoint = spawnPoints[0].position;
-        spawnPoints.RemoveAt(0);
+        int temp = Random.Range(0, spawnPoints.Count);
+        Vector3 spawnPoint = spawnPoints[temp].position;
 
         PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint, Quaternion.identity);
     }

@@ -24,13 +24,25 @@ public class CharController : MonoBehaviour
 
     private void Update()
     {
-        if(photonView.IsMine)
+        if(photonView.IsMine&&GameManager.Instance.isGameOn)
         {
             inputVector = InputManager.Instance.GetPlayerInputs();
-            movementVector = new Vector3(inputVector.x, transform.position.y, inputVector.y);
+            movementVector = new Vector3(inputVector.x, 10f, inputVector.y);
             movementVector = transform.forward * movementVector.z + transform.right * movementVector.x;
             charController.Move(movementVector * Time.deltaTime * charSpeed);
+            transform.position = new Vector3(transform.position.x,1f,transform.position.z);
         }
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            GameManager.Instance.GameOver();
+        }
+        if (collision.gameObject.CompareTag("Win"))
+        {
+            GameManager.Instance.Win();
+        }
     }
 }
