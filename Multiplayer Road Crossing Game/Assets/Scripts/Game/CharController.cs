@@ -7,6 +7,7 @@ using Photon.Pun;
 public class CharController : MonoBehaviour
 {
     private CharacterController charController;
+    private Rigidbody rg;
 
     private Vector2 inputVector;
     private Vector3 movementVector;
@@ -18,8 +19,13 @@ public class CharController : MonoBehaviour
     private void Start()
     {
         charController = this.gameObject.GetComponent<CharacterController>();
+        rg = this.gameObject.GetComponent<Rigidbody>();
         charSpeed = 8f;
         photonView = this.gameObject.GetComponent<PhotonView>();
+        if(!photonView.IsMine)
+        {
+            rg.isKinematic = true;
+        }
     }
 
     private void Update()
